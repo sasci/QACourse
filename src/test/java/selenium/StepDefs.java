@@ -1,13 +1,5 @@
 package selenium;
 
-import appium.AppiumSetup;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-
-import static selenium.SeleniumHelper.*;
-
 public class StepDefs {
 //    @Given("user navigates {string}")
 //    public void userNavigates(String url) {

@@ -42,7 +42,8 @@ public class CallManagementTest {
         waitForVisible(By.xpath("//*[@text='First name']")).sendKeys("Appium");
         ((AndroidDriver<MobileElement>) driver).pressKey(new KeyEvent(AndroidKey.TAB));
         waitForVisible(By.xpath("//*[@text='Last name']")).sendKeys("Test");
-        ((AndroidDriver<MobileElement>) driver).pressKey(new KeyEvent(AndroidKey.BACK));
+        ((AndroidDriver<MobileElement>) driver).hideKeyboard();
+//        ((AndroidDriver<MobileElement>) driver).pressKey(new KeyEvent(AndroidKey.BACK));
         waitForVisible(By.xpath("//*[@text='Phone']")).sendKeys("+449123123142");
         waitForVisible(By.id("com.android.contacts:id/editor_menu_save_button")).click();
         ((AndroidDriver<MobileElement>) driver).pressKey(new KeyEvent(AndroidKey.valueOf("APP_SWITCH")));

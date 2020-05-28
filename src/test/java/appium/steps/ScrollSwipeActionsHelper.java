@@ -1,4 +1,4 @@
-package appium;
+package appium.steps;
 
 
 import io.appium.java_client.MobileBy;
@@ -8,11 +8,10 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 
 
-import static appium.AppiumSetup.*;
+import static appium.steps.AppiumSetup.*;
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.ElementOption.element;
 import static io.appium.java_client.touch.offset.PointOption.point;
-import static java.time.Duration.ofMillis;
 import static java.time.Duration.ofSeconds;
 
 enum DIRECTION {
@@ -21,7 +20,7 @@ enum DIRECTION {
 
 public class ScrollSwipeActionsHelper {
     public static void touchActionSwipeHelper(String direction, String el1,String el2) {
-        int size1 = locateElementsWithoutWait(el2).size();
+        int size1 = 0;
 
         Dimension size = driver.manage().window().getSize();
 
@@ -34,8 +33,8 @@ public class ScrollSwipeActionsHelper {
             case RIGHT:
                 startY = locateElement(el1).getLocation().getY();
                 endY = locateElement(el1).getLocation().getY();
-                startX = (int) (size.width * 0.90);
-                endX = (int) (size.width * 0.05);
+                startX = (int) (size.width * 0.85);
+                endX = (int) (size.width * 0.15);
                 break;
 
             case LEFT:
@@ -46,8 +45,8 @@ public class ScrollSwipeActionsHelper {
                 break;
 
             case UP:
-                endY = (int) (size.height * 0.70);
                 startY = (int) (size.height * 0.30);
+                endY = (int) (size.height * 0.70);
                 startX = locateElement(el1).getLocation().getX();
                 endX = locateElement(el1).getLocation().getX();
                 break;
@@ -61,7 +60,7 @@ public class ScrollSwipeActionsHelper {
         }
 
         while(size1<1) {
-            getAction(startX, endX, startY, endY);
+            getAction(startY, endY, startX, endX);
             size1 = locateElementsWithoutWait(el2).size();
         }
     }

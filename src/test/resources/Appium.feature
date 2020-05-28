@@ -52,13 +52,14 @@ Feature: Testing apks dynamically independent from activity and package
     And user scroll to "TAB_5" in 5 steps
     And user clicks "TAB_20"
 
+  @PI2
   Scenario: user should swipe until element find using TouchAction class
     Given user opens "AppiumDemos"
     And user clicks "Views"
     And user scroll to "Tabs"
     And user clicks "Tabs"
     And user clicks "Scrollable"
-    And user scroll to "RIGHT" direction at "TAB_5" until "TAB_20"
+    And user scroll to "RIGHT2" direction at "TAB_5" until "TAB_20"
     And user clicks "TAB_20"
 
   Scenario: user should define the date from datepicker
@@ -71,5 +72,17 @@ Feature: Testing apks dynamically independent from activity and package
     And user clicks "18_June"
     And user clicks "OK_Button"
     Then text in "Date_Display" should be "6-18-2020 01:02"
-    
+
+   Scenario: User tests in Real Device Calculator
+     Given user opens "Calculator"
+     And user clicks "7"
+     And user clicks "Plus"
+     And user clicks "9"
+     And user clicks "Equal"
+     Then text in "Result" should be "16"
+     And user press key "BACK"
+
+   Scenario: basic test
+     Given user opens ""
+     And user tap views
 

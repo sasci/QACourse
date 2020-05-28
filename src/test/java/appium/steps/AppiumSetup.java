@@ -1,4 +1,4 @@
-package appium;
+package appium.steps;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
@@ -7,8 +7,11 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -38,7 +41,7 @@ public class AppiumSetup {
             e.printStackTrace();
         }
         DesiredCapabilities caps=new DesiredCapabilities();
-        caps.setCapability(MobileCapabilityType.APPLICATION_NAME,"Android");
+        caps.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"9.0");
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
         caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel API 28");
@@ -71,10 +74,14 @@ public class AppiumSetup {
     }
 
     @After
-    void quit() {
+    void quit(Scenario scenario) {
+        if (scenario.isFailed()) {
+            // Take a screenshot...
+            final byte[] screenshot = driver.getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png",scenario.getName()+scenario.getLine().toString()); // ... and embed it in the report.
+        }
         driver.quit();
     }
-
 
     public static MobileElement waitForPresence(By path){
         return (MobileElement) wait.until(ExpectedConditions.presenceOfElementLocated(path));

@@ -1,9 +1,7 @@
-package appium;
+package appium.steps;
 
 
-import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
@@ -12,9 +10,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 
-import static appium.AppiumSetup.driver;
-import static appium.AppiumSetup.locateElement;
-import static io.appium.java_client.touch.WaitOptions.waitOptions;
+import static appium.steps.AppiumSetup.driver;
+import static appium.steps.AppiumSetup.locateElement;
 import static io.appium.java_client.touch.offset.ElementOption.element;
 import static io.appium.java_client.touch.offset.PointOption.point;
 import static java.time.Duration.ofSeconds;

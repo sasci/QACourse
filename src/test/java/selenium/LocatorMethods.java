@@ -23,7 +23,7 @@ public class LocatorMethods {
 
 //    @Before
     public void setDriver() throws IOException {
-        System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver","drivers/chromedriver81ForMac");
         driver=new ChromeDriver();
         wait=new WebDriverWait(driver,10);
         initProperties();
