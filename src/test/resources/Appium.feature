@@ -59,7 +59,7 @@ Feature: Testing apks dynamically independent from activity and package
     And user scroll to "Tabs"
     And user clicks "Tabs"
     And user clicks "Scrollable"
-    And user scroll to "RIGHT2" direction at "TAB_5" until "TAB_20"
+    And user scroll to "RIGHT" direction at "TAB_5" until "TAB_20"
     And user clicks "TAB_20"
 
   Scenario: user should define the date from datepicker

@@ -5,7 +5,16 @@ pipeline{
           steps {
             echo 'executing gradle...'
             withGradle(){
-              sh './gradlew -v'
+              sh 'gradle test'
+            }
+          }
+        }
+
+        stage ("run gradle") {
+          steps {
+            cucumber buildStatus:"UNSTABLE",
+            fileIncludePattern:"**/cucumber.json",
+            jsonReportDirectory:"report"
             }
           }
         }

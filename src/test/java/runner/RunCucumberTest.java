@@ -10,7 +10,7 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 @CucumberOptions(
         plugin = {"pretty"
                 , "html:report/cucumber"
-                , "json:report/cucumber.json"
+                , "json:cucumber.json"
                 , "summary"
                 , "de.monochromata.cucumber.report.PrettyReports:report/cucumber-html-reports"}
         ,features = {"src/test/resources"}
