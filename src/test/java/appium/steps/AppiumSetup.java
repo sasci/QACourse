@@ -60,6 +60,7 @@ public class AppiumSetup {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+        new VideoManager().startRecording();
     }
 
     private void initProperties() throws IOException {
@@ -74,12 +75,13 @@ public class AppiumSetup {
     }
 
     @After
-    void quit(Scenario scenario) {
+    public void quit(Scenario scenario) {
         if (scenario.isFailed()) {
             // Take a screenshot...
             final byte[] screenshot = driver.getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png",scenario.getName()+scenario.getLine().toString()); // ... and embed it in the report.
+            scenario.attach(screenshot, "image/png",scenario.getName()+scenario.getLine().toString());
         }
+        new VideoManager().stopRecording(scenario.getName());
         driver.quit();
     }
 

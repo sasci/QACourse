@@ -118,3 +118,4 @@ out/
 component-test/cve-suppression.xml
 nvd/jsrepository.json
 nvd/odc.mv.db
+report/

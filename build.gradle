@@ -30,4 +30,5 @@ dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.0'
     compile 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation 'de.monochromata.cucumber:reporting-plugin:4.0.52'
 }
