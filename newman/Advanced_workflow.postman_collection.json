@@ -1,0 +1,308 @@
+{
+	"info": {
+		"_postman_id": "596f6a3d-0854-45be-9005-364dd9c5e932",
+		"name": "Advanced workflow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Request 1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a6a3c87d-15ab-4966-bd20-ddd949e63a0a",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3db53c24-ac90-4cc8-baa4-29c8a6d0d62d",
+						"exec": [
+							"console.log(pm.globals.get(\"remainingRoutes\"));",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "httpbin.org/get?request=1",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "request",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9be2fbf6-4883-408a-ad23-ea051eeafb5a",
+						"exec": [
+							"console.log(pm.globals.get(\"remainingRoutes\"));",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "httpbin.org/get?request=2",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "request",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0eb38420-b2de-4990-b20f-1e85de00f2b6",
+						"exec": [
+							"console.log(pm.globals.get(\"remainingRoutes\"));",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "httpbin.org/get?request=3",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "request",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "70eaf27f-05e2-42c0-bbb5-76beeec2f19c",
+						"exec": [
+							"console.log(pm.globals.get(\"remainingRoutes\"));",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "httpbin.org/get?request=4",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "request",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "11ed2639-c3a1-4537-9223-f06e77652fcf",
+						"exec": [
+							"console.log(pm.globals.get(\"remainingRoutes\"));",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "httpbin.org/get?request=5",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "request",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 6",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "67a7b8c2-ef42-43ef-8075-903e695cef14",
+						"exec": [
+							"console.log(pm.globals.get(\"remainingRoutes\"));",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "httpbin.org/get?request=6",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "request",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1fc31af2-1e0d-4fdd-8a88-6eedfbe445f6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7b1c17b7-8cd0-4791-9024-be3d0f757930",
+				"type": "text/javascript",
+				"exec": [
+					"postman.setNextRequest(getNextRequest());",
+					"",
+					"function getNextRequest() {",
+					"    let routes;",
+					"    if (Array.isArray(pm.globals.get(\"remainingRoutes\")) === true) {",
+					"        routes = pm.globals.get(\"remainingRoutes\");",
+					"    } else {",
+					"        routes = pm.iterationData.get(\"routes\");",
+					"    }",
+					"    ",
+					"    const nextRequest = routes.shift();",
+					"    pm.globals.set(\"remainingRoutes\", routes);",
+					"    ",
+					"    if (nextRequest === undefined) {",
+					"        pm.globals.unset(\"remainingRoutes\");",
+					"        return null;",
+					"    }",
+					"    ",
+					"    return nextRequest;",
+					"}"
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
