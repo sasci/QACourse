@@ -1,6 +1,7 @@
 Feature: Testing apks dynamically independent from activity and package
   Scenario: user should proceed pages on appiumDemos animation activity
-    #Given user install "appium_application" goes "Animation_page"
+    Given user opens "AppiumDemos"
+    Then user pass ".app.Animation" screen
     When user clicks "FADE_IN"
     And user clicks "LIST_DIALOG"
     And user clicks "Command_ONE"
@@ -9,8 +10,10 @@ Feature: Testing apks dynamically independent from activity and package
     And user press key "APP_SWITCH"
     And user press key "HOME"
 
+  @Smoke
   Scenario: user should switch between apps
     Given user opens "AppiumDemos"
+    Then user pass ".app.Animation" screen
     When user clicks "FADE_IN"
     And user clicks "LIST_DIALOG"
     And user clicks "Command_ONE"
@@ -82,7 +85,4 @@ Feature: Testing apks dynamically independent from activity and package
      Then text in "Result" should be "16"
      And user press key "BACK"
 
-   Scenario: basic test
-     Given user opens ""
-     And user tap views
 

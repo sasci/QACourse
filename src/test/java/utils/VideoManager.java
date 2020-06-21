@@ -1,4 +1,4 @@
-package appium.steps;
+package utils;
 
 import io.appium.java_client.screenrecording.CanRecordScreen;
 import org.apache.commons.codec.binary.Base64;
@@ -10,11 +10,11 @@ import static appium.steps.AppiumSetup.driver;
 
 public class VideoManager {
 
-    public void startRecording(){
+    public static void startRecording(){
         ((CanRecordScreen) driver).startRecordingScreen();
     }
 
-    public void stopRecording(String scenarioName) {
+    public static void stopRecording(String scenarioName) {
         String media = ((CanRecordScreen) driver).stopRecordingScreen();
         String dirPath = "Android"+ File.separator +"Videos";
         File videoDir = new File(dirPath);

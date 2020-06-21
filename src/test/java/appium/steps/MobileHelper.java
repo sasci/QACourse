@@ -2,6 +2,7 @@ package appium.steps;
 
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
@@ -11,14 +12,12 @@ import org.testng.Assert;
 
 
 import static appium.steps.AppiumSetup.driver;
-import static appium.steps.AppiumSetup.locateElement;
-import static io.appium.java_client.touch.offset.ElementOption.element;
-import static io.appium.java_client.touch.offset.PointOption.point;
-import static java.time.Duration.ofSeconds;
-
+import static utils.Locator.*;
 public class MobileHelper {
 
-
+    public static void userPassScreenHelper(String activityName){
+        ((AndroidDriver) driver).startActivity(new Activity("io.appium.android.apis", activityName));
+    }
 
     public static void mobilePressBackHelper(){
         driver.navigate().back();

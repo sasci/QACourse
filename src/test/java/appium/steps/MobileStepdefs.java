@@ -83,4 +83,9 @@ public class MobileStepdefs {
     public void userScrollToInSteps(String arg0, int arg1) {
         iterateAction(arg0,arg1);
     }
+
+    @Then("user pass {string} screen")
+    public void userPassScreen(String activityName) {
+        userPassScreenHelper(activityName);
+    }
 }

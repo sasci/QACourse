@@ -9,10 +9,11 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty"
-                , "html:report/cucumber"
+//                , "html:report/cucumber"
                 , "json:cucumber.json"
                 , "summary"
-                , "de.monochromata.cucumber.report.PrettyReports:report/cucumber-html-reports"}
+                , "de.monochromata.cucumber.report.PrettyReports:report/cucumber"
+        }
         ,features = {"src/test/resources"}
         ,glue = {"appium.steps"}
         ,snippets = CAMELCASE

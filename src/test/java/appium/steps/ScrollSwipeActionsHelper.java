@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 
 
 import static appium.steps.AppiumSetup.*;
+import static utils.Locator.*;
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.ElementOption.element;
 import static io.appium.java_client.touch.offset.PointOption.point;
