@@ -1,3 +1,4 @@
+
 plugins {
     id 'java'
 }
@@ -12,23 +13,21 @@ repositories {
     mavenLocal()
     mavenCentral()
     jcenter()
-    maven {
-        url 'https://dl.bintray.com/hmcts/hmcts-maven'
-    }
 }
 
-
 dependencies {
-    testImplementation 'org.testng:testng:7.1.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+    testImplementation 'org.testng:testng:7.1.0'
     testImplementation 'io.rest-assured:rest-assured:4.3.0'
-    testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '5.7.0'
-    testCompile group: 'io.cucumber', name: 'cucumber-picocontainer', version: '5.7.0'
-    testCompile group: 'io.cucumber', name: 'cucumber-testng', version: '5.7.0'
-    implementation 'io.appium:java-client:7.3.0'
-    implementation 'io.cucumber:cucumber-java:5.7.0'
-    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    testImplementation 'io.cucumber:cucumber-junit:5.7.0'
+    testImplementation 'io.cucumber:cucumber-picocontainer:5.7.0'
+    testImplementation 'io.cucumber:cucumber-testng:5.7.0'
+    implementation      'io.cucumber:cucumber-java:5.7.0'
+    implementation      'io.appium:java-client:7.3.0'
+    implementation      'org.seleniumhq.selenium:selenium-java:3.141.59'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.0'
     compile 'com.googlecode.json-simple:json-simple:1.1.1'
     implementation 'de.monochromata.cucumber:reporting-plugin:4.0.52'
+    implementation 'org.projectlombok:lombok:1.18.12'
 }
+

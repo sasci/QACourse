@@ -17,7 +17,7 @@ public class RestAssuredImpl {
         Response response = RestAssured.get("http://reqres.in/api/users/2");
         int statusCode = response.getStatusCode();
         System.out.println("statusCode = " + statusCode);
-        String last_name = response.getBody().jsonPath().get("data.last_name").toString();
+        final String last_name = response.getBody().jsonPath().get("data.last_name").toString();
         System.out.println("last_name = " + last_name);
     }
 
@@ -52,7 +52,7 @@ public class RestAssuredImpl {
         given()
                 .get("https://reqres.in/api/users")
         .then()
-                .body("data.first_name",hasItems("Eve","Emma","Charles"))
+                .body("data.first_name",hasItems("Eve","Emma2","Charles"))
                 .body("data.first_name[0]",equalTo("George"));
     }
 
@@ -70,6 +70,8 @@ public class RestAssuredImpl {
         given()
                 .with()
                 .contentType(ContentType.JSON)
+//                .body("{\"name\":\"Ali\"" +
+//                        ",\"job\":\"QAEngineer\"}")
                 .body(reqBody)
         .when()
                 .post("https://reqres.in/api/users")
